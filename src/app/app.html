@@ -1,0 +1,44 @@
+<!--
+App Side Menu
+-->
+<ion-menu [content]="content">
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Menu</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content>
+		<ion-list>
+			<ion-item-divider sticky color="bbdefb">
+				Design & Layout
+			</ion-item-divider>
+
+			<button menuClose ion-item *ngFor="let d of designs" (click)="openPage(d)">
+				{{ d.title }}
+			</button>
+
+			<ion-item-divider sticky color="bbdefb">
+				Authentication
+			</ion-item-divider>
+
+			<button menuClose ion-item *ngFor="let a of authentications" (click)="openPage(a)">
+				{{ a.title }}
+			</button>
+
+			<ion-item-divider sticky color="bbdefb">
+				Forms
+			</ion-item-divider>
+
+			<ion-item-divider sticky color="bbdefb">
+				Maps
+			</ion-item-divider>
+
+			<ion-item-divider sticky color="bbdefb">
+				Listing
+			</ion-item-divider>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

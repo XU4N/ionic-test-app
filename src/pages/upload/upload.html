@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+  	<ion-buttons left>
+  		<button ion-button icon-only menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+		</ion-buttons>
+  	
+    <ion-title>Upload</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img *ngIf="image" [src]="image">
+
+  <button ion-button (tap)="uploadHandler()">
+    Upload!
+  </button>
+
+  <ng-container *ngIf="progress | async as percent">
+    <progress [value]="percent" max="100"></progress>
+  </ng-container>
+
+  <button ion-button (tap)="task.pause()">
+    Pause
+  </button>
+
+  <button ion-button (tap)="task.resume()">
+    Resume
+  </button>
+</ion-content>

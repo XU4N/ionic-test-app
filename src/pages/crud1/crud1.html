@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>CRUD - 1 (Song List)</ion-title>
+
+    <ion-buttons end>
+    	<button ion-button icon-only (click)="goToCreatePage()">
+    		<ion-icon name="add"></ion-icon>
+    	</button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let song of songList | async" (click)="goToDetailPage(song)">
+  	<ion-card-header>
+  		{{ song.songName }}
+  	</ion-card-header>
+
+  	<ion-card-content>
+  		Artist Name: {{ song.artistName }}
+  	</ion-card-content>
+  </ion-card>
+</ion-content>
