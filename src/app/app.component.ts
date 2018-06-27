@@ -27,7 +27,9 @@ export class MyApp {
             {title: 'Color', component: 'ColorPage'},
 
             {title: "CRUD - 1", component: 'Crud1Page'},
-            {title: "Upload", component: 'UploadPage'}
+            {title: "Upload", component: 'UploadPage'},
+            {title: "My Files", component: 'MyFilePage'},
+            {title: "Calendar", component: 'EventIntegrationPage'},
         ]
 
         this.authentications = [
